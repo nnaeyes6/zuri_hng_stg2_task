@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -45,36 +46,33 @@ class _SignUpScreenState extends State<SignUpScreen> {
     var _padding = EdgeInsets.symmetric(vertical: 1, horizontal: 1);
     var _margin = EdgeInsets.symmetric(vertical: 5, horizontal: 10);
     var _color = Colors.grey.shade300;
-    var _alignment = Alignment(-1.0, 0.0);
-    var _padding2 = EdgeInsets.all(8);
-    var _margin2 = EdgeInsets.only(top: 17);
+    // var _alignment = Alignment(-1.0, 0.0);
+    // var _padding2 = EdgeInsets.all(8);
+    // var _margin2 = EdgeInsets.only(top: 17);
     // var _margin3 = EdgeInsets.fromLTRB(100, 0, 100, 5);
     // var _margin4 = EdgeInsets.fromLTRB(100, 0, 100, 0);
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey,
         title: Center(
-          child: Image.asset(
-            'images/hng.png',
-            height: 200,
-            width: 200,
+          child: Text(
+            'SignUp',
+            style: TextStyle(
+              color: Colors.black,
+            ),
           ),
         ),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 5),
         child: ListView(children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width / 1,
-            // height: MediaQuery.of(context).size.width / 1,
-            alignment: Alignment(-1.0, 0.0),
-            padding: EdgeInsets.all(8),
-            margin: _margin2,
-            child: Text(
-              (_userName),
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            (_userName),
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
           Container(
             padding: _padding,
@@ -99,14 +97,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
               onSubmitted: _onUserName,
             ),
           ),
-          Container(
-              alignment: _alignment,
-              padding: _padding2,
-              margin: _margin2,
-              child: Text(
-                _phoneNumber,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              )),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            _phoneNumber,
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
           Container(
             padding: _padding,
             margin: _margin,
@@ -128,14 +125,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
               onSubmitted: _onPhoneNumber,
             ),
           ),
-          Container(
-            width: MediaQuery.of(context).size.width / 1,
-            alignment: Alignment(-1.0, 0.0),
-            padding: EdgeInsets.all(8),
-            child: Text(
-              _email,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            _email,
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
           Container(
             padding: _padding,
@@ -159,14 +154,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
               onSubmitted: _onEmail,
             ),
           ),
-          Container(
-              alignment: _alignment,
-              padding: _padding2,
-              margin: _margin2,
-              child: Text(
-                _password,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              )),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            _password,
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
           Container(
             padding: _padding,
             margin: _margin,
@@ -192,17 +186,35 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
           ),
           SizedBox(
-            height: 25,
+            height: 5,
           ),
           Container(
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.all(10),
-            child: Image.asset(
-              'images/zuri.png',
-              height: 60,
-              width: 200,
+            child: InkWell(
+              child: Image.asset(
+                'images/zuri.png',
+                height: 50,
+                width: 200,
+              ),
+              onTap: () => launch('https://training.zuri.team/'),
             ),
-          )
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Container(
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.all(10),
+            child: InkWell(
+              child: Image.asset(
+                'images/hng.png',
+                height: 50,
+                width: 200,
+              ),
+              onTap: () => launch('https://hng.tech/'),
+            ),
+          ),
         ]),
       ),
     );
