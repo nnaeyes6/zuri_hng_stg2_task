@@ -46,11 +46,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
     var _padding = EdgeInsets.symmetric(vertical: 1, horizontal: 1);
     var _margin = EdgeInsets.symmetric(vertical: 5, horizontal: 10);
     var _color = Colors.grey.shade300;
-    // var _alignment = Alignment(-1.0, 0.0);
-    // var _padding2 = EdgeInsets.all(8);
-    // var _margin2 = EdgeInsets.only(top: 17);
-    // var _margin3 = EdgeInsets.fromLTRB(100, 0, 100, 5);
-    // var _margin4 = EdgeInsets.fromLTRB(100, 0, 100, 0);
 
     return Scaffold(
       appBar: AppBar(
@@ -192,12 +187,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.all(10),
             child: InkWell(
-              child: Image.asset(
-                'images/zuri.png',
-                height: 50,
-                width: 200,
+              child: GestureDetector(
+                child: Image.asset(
+                  'images/zuri.png',
+                  height: 50,
+                  width: 200,
+                ),
+                onTap: () => launch('https://training.zuri.team/'),
               ),
-              onTap: () => launch('https://training.zuri.team/'),
             ),
           ),
           SizedBox(
@@ -207,12 +204,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.all(10),
             child: InkWell(
-              child: Image.asset(
-                'images/hng.png',
-                height: 50,
-                width: 200,
+              child: GestureDetector(
+                child: Image.asset(
+                  'images/hng.png',
+                  height: 50,
+                  width: 200,
+                ),
+                onTap: () => launch('https://hng.tech/'),
               ),
-              onTap: () => launch('https://hng.tech/'),
             ),
           ),
         ]),
@@ -220,4 +219,4 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 }
-// CLICK ON THE KEYBOARD BLUE SUBMIT BUTTON AND THE RESULT WILL DISPLAY. THANKS
+// CLICK ON THE KEYBOARD BLUE SUBMIT BUTTON AND THE RESULT WILL DISPLAY. THANKS.
